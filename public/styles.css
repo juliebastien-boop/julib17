@@ -314,6 +314,10 @@ main {
   z-index: 10;
 }
 
+.overlay[hidden] {
+  display: none !important;
+}
+
 .detail-panel {
   background: var(--ivoire);
   max-width: 560px;
