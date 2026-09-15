@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
 :root {
+  color-scheme: light;
   --ivoire: #f6f1e7;
   --ivoire-2: #efe8d9;
   --encre: #262019;
