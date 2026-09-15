@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ma Cave</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <h1>Ma&nbsp;Cave</h1>
+    <p class="subtitle">carte des vins</p>
+    <p class="stats" id="stats"></p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="search-row">
+        <input
+          id="q"
+          type="text"
+          placeholder="rechercher — ex. « vin beurré, bon rapport qualité-prix », « vins à garder »…"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="chips" id="view-chips">
+        <button class="chip active" data-categorie="">Tous</button>
+        <button class="chip" data-categorie="pepite">Pépites</button>
+        <button class="chip" data-categorie="valeur_sure">Valeurs sûres</button>
+        <button class="chip" data-categorie="degustes">Déjà dégustés</button>
+      </div>
+
+      <details class="filters">
+        <summary>Filtres</summary>
+        <div class="filters-grid">
+          <label>
+            Région
+            <select id="f-region"><option value="">Toutes</option></select>
+          </label>
+          <label>
+            Statut du producteur
+            <select id="f-statut">
+              <option value="">Tous</option>
+              <option value="niche">Niche</option>
+              <option value="connu">Connu</option>
+              <option value="petit producteur">Petit producteur</option>
+            </select>
+          </label>
+          <label>
+            Couleur (estimée)
+            <select id="f-couleur">
+              <option value="">Toutes</option>
+              <option value="rouge">Rouge</option>
+              <option value="blanc">Blanc</option>
+              <option value="rose">Rosé</option>
+              <option value="effervescent">Effervescent</option>
+            </select>
+          </label>
+          <label>
+            Score minimum
+            <input id="f-score" type="range" min="80" max="99" value="80" />
+            <span id="f-score-val">80</span>
+          </label>
+          <label>
+            Trier par
+            <select id="f-sort">
+              <option value="score_desc">Score (décroissant)</option>
+              <option value="score_asc">Score (croissant)</option>
+              <option value="prix_asc">Prix (croissant)</option>
+              <option value="prix_desc">Prix (décroissant)</option>
+              <option value="ratio_desc">Meilleur rapport qualité-prix</option>
+              <option value="millesime_desc">Millésime (récent)</option>
+              <option value="nom_asc">Nom</option>
+            </select>
+          </label>
+        </div>
+        <div class="tags-grid" id="f-tags"></div>
+      </details>
+    </section>
+
+    <section class="results" id="results"></section>
+
+    <nav class="pagination" id="pagination"></nav>
+  </main>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="detail-panel" id="detail-panel"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
